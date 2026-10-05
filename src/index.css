@@ -1,0 +1,261 @@
+/* ==========================================================================
+   OUR LITTLE BOOK — DESIGN SYSTEM & SCRAPBOOK AESTHETICS
+   Tailored HSL Warm Paper Palette, Vintage Stationery, Tactile Textures
+   ========================================================================== */
+
+:root {
+  /* Warm Romantic Palette */
+  --paper-cream: #fbf8f2;
+  --paper-canvas: #f6f1e8;
+  --paper-parchment: #f0e6d6;
+  --paper-aged: #e7dac5;
+  --paper-blush: #fdf5f3;
+  --paper-lined: #f7f3ec;
+  
+  --ink-primary: #2d241e;
+  --ink-muted: #6b5c53;
+  --ink-faded: #9b897e;
+  --ink-rose: #8b3a4a;
+  --ink-burgundy: #5c202e;
+  --ink-navy: #233649;
+  --ink-forest: #2f4538;
+  
+  /* Accent Colors */
+  --accent-gold: #c59b27;
+  --accent-blush: #e2a69d;
+  --accent-rose: #bf5b72;
+  --accent-terracotta: #c46851;
+  --accent-sage: #849683;
+  --accent-sky: #839bb3;
+
+  /* Book Cover Materials */
+  --leather-burgundy: #4a1924;
+  --leather-spine: #38121a;
+  --linen-texture: #e4d7c5;
+  --gold-foil: linear-gradient(135deg, #e8c872 0%, #c49931 50%, #f6e29d 100%);
+  
+  /* Shadows & Depth */
+  --shadow-paper: 0 4px 20px rgba(45, 36, 30, 0.08), 0 1px 4px rgba(45, 36, 30, 0.05);
+  --shadow-polaroid: 0 10px 25px -5px rgba(35, 25, 20, 0.16), 0 3px 8px rgba(0, 0, 0, 0.06);
+  --shadow-sticker: 0 3px 10px rgba(0, 0, 0, 0.12);
+  --shadow-tape: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-book-spread: 0 25px 60px -15px rgba(25, 18, 14, 0.35), 0 0 1px rgba(0, 0, 0, 0.2);
+  --spine-shadow: linear-gradient(to right, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.04) 8%, rgba(0,0,0,0) 18%);
+  --spine-shadow-right: linear-gradient(to left, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.04) 8%, rgba(0,0,0,0) 18%);
+
+  /* Typography */
+  --font-serif-title: 'Playfair Display', Georgia, serif;
+  --font-serif-classic: 'Marcellus', 'Cinzel', serif;
+  --font-editorial: 'Lora', Georgia, serif;
+  --font-handwriting: 'Caveat', cursive;
+  --font-romantic: 'Dancing Script', cursive;
+  --font-vintage-type: 'Special Elite', monospace;
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-kalam: 'Kalam', cursive;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #27211d;
+  background-image: 
+    radial-gradient(circle at 50% 10%, rgba(214, 184, 150, 0.12) 0%, transparent 60%),
+    radial-gradient(#3a312a 1px, transparent 1px);
+  background-size: 100% 100%, 24px 24px;
+  color: var(--ink-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  user-select: none;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(240, 230, 214, 0.2);
+}
+::-webkit-scrollbar-thumb {
+  background: #a38c7b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7e695a;
+}
+
+/* Texture classes */
+.texture-creamy-canvas {
+  background-color: var(--paper-cream);
+  background-image: radial-gradient(rgba(180, 160, 140, 0.15) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+.texture-grain-paper {
+  background-color: var(--paper-canvas);
+  background-image: repeating-linear-gradient(45deg, rgba(160, 140, 120, 0.03) 0px, rgba(160, 140, 120, 0.03) 2px, transparent 2px, transparent 4px);
+}
+
+.texture-vintage-parchment {
+  background-color: var(--paper-parchment);
+  background-image: radial-gradient(ellipse at center, #faf5eb 0%, #ebe0cd 100%);
+}
+
+.texture-soft-blush {
+  background-color: var(--paper-blush);
+  background-image: radial-gradient(circle at 10% 20%, rgba(245, 209, 203, 0.4) 0%, transparent 50%),
+                    radial-gradient(circle at 90% 80%, rgba(245, 225, 203, 0.3) 0%, transparent 50%);
+}
+
+.texture-dot-grid {
+  background-color: var(--paper-cream);
+  background-image: radial-gradient(#bba697 1.2px, transparent 1.2px);
+  background-size: 20px 20px;
+}
+
+.texture-ruled-journal {
+  background-color: var(--paper-lined);
+  background-image: repeating-linear-gradient(transparent, transparent 27px, #e3d8c8 28px);
+  line-height: 28px;
+}
+
+/* Polaroid Styling */
+.polaroid-frame {
+  background: #ffffff;
+  padding: 12px 12px 34px 12px;
+  box-shadow: var(--shadow-polaroid);
+  position: relative;
+  transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+.polaroid-frame:hover {
+  box-shadow: 0 14px 30px -5px rgba(25, 18, 14, 0.25);
+}
+
+.polaroid-photo-inner {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  position: relative;
+  background: #1e1e1e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.polaroid-caption {
+  font-family: var(--font-handwriting);
+  font-size: 1.15rem;
+  color: #3b2f29;
+  text-align: center;
+  margin-top: 10px;
+  line-height: 1.25;
+  word-break: break-word;
+}
+
+/* Washi Tape Effects */
+.washi-tape {
+  position: absolute;
+  height: 26px;
+  opacity: 0.88;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+  z-index: 10;
+  pointer-events: none;
+}
+.tape-top-center {
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-1.5deg);
+  width: 90px;
+}
+.tape-corner-left {
+  top: -8px;
+  left: -12px;
+  transform: rotate(-35deg);
+  width: 65px;
+}
+.tape-pattern-dots {
+  background-color: #eed6c4;
+  background-image: radial-gradient(#be9b7b 1.5px, transparent 1.5px);
+  background-size: 8px 8px;
+}
+.tape-pattern-kraft {
+  background-color: #cb9d75;
+  background-image: repeating-linear-gradient(90deg, rgba(255,255,255,0.07) 0px, rgba(255,255,255,0.07) 4px, transparent 4px, transparent 8px);
+}
+.tape-pattern-stripes {
+  background-color: #eed7d7;
+  background-image: repeating-linear-gradient(45deg, #d8a8aa 0px, #d8a8aa 4px, transparent 4px, transparent 10px);
+}
+
+/* Scrap Paper Cutout */
+.scrap-paper-cutout {
+  box-shadow: 0 4px 12px rgba(35, 25, 20, 0.08);
+  position: relative;
+  padding: 16px 20px;
+  background: var(--paper-lined);
+}
+.scrap-paper-cutout::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: repeating-linear-gradient(90deg, #d3c2af, #d3c2af 3px, transparent 3px, transparent 6px);
+}
+
+/* Wax Seal effect */
+.wax-seal {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #b73248 0%, #87182a 60%, #560e1a 100%);
+  box-shadow: 0 6px 14px rgba(70, 10, 20, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.3), inset 0 -2px 4px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f7d2d8;
+  font-size: 24px;
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.wax-seal:hover {
+  transform: scale(1.08) rotate(3deg);
+}
+
+/* Animations */
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-5px) rotate(0.5deg); }
+}
+
+.animate-float {
+  animation: floatGentle 5s ease-in-out infinite;
+}
+
+@keyframes bookOpen {
+  from {
+    transform: perspective(1400px) rotateY(-20deg) scale(0.96);
+    opacity: 0.8;
+  }
+  to {
+    transform: perspective(1400px) rotateY(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+.book-spread-open {
+  animation: bookOpen 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom Selection Highlight */
+::selection {
+  background: #f0c5c1;
+  color: #4a1924;
+}
